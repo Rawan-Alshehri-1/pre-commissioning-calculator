@@ -12,12 +12,14 @@
       --accent: #1aa3a3;
       --text: #1f2937;
     }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--secondary);
       color: var(--text);
     }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -26,6 +28,7 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
       padding: 32px;
     }
+
     header {
       display: flex;
       align-items: center;
@@ -34,6 +37,7 @@
       padding-bottom: 20px;
       margin-bottom: 30px;
     }
+
     .logo {
       width: 120px;
       height: 60px;
@@ -43,31 +47,37 @@
       font-weight: bold;
       border-radius: 8px;
     }
+
     h1 {
       margin: 0;
       color: var(--primary);
     }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
+
     .card {
       background: #fafafa;
       border-radius: 10px;
       padding: 20px;
       border: 1px solid #e5e7eb;
     }
+
     .card h2 {
       margin-top: 2;
       color: var(--primary);
       font-size: 18px;
     }
+
     label {
       display: block;
       margin: 12px 0 6px;
       font-weight: bold;
     }
+
     input,
     select {
       width: 100%;
@@ -76,6 +86,7 @@
       border: 1px solid #d1d5db;
       font-size: 14px;
     }
+
     .results p {
       display: flex;
       justify-content: space-between;
@@ -83,10 +94,12 @@
       padding-bottom: 10px;
       border-bottom: 1px dashed #e5e7eb;
     }
+
     .results span {
       font-weight: bold;
     }
-        footer {
+
+    footer {
       text-align: center;
       margin-top: 40px;
       padding: 15px 0;
@@ -94,7 +107,6 @@
       color: #666;
       border-top: 1px solid #ddd;
     }
-    
   </style>
 </head>
 
@@ -108,7 +120,15 @@
         <h1>Pre‑Commissioning Calculator</h1>
       </div>
     </header>
-
+    <section style="margin-bottom:30px; line-height:1.6;">
+      <p style="font-size:14px; color:#444;">
+        <strong>Pricing Disclaimer:</strong><br>
+        Please note that the pricing does not include operational service delivery (if required).
+        The pricing covers product configuration, system setup, hardware provisioning, and knowledge transfer,
+        including one (1) month of support to ensure the on-ground team is properly trained and capable of
+        executing the required activities effectively.
+      </p>
+    </section>
     <div class="grid">
       <div class="card">
         <h2>Client Inputs</h2>
@@ -133,8 +153,54 @@
         <p>Subscription Fee <span id="subscription">0</span></p>
       </div>
     </div>
-  </div>
+    <section style="margin-top:40px; line-height:1.7;">
 
+        <strong>Pricing Scope Definition:</strong><br>
+
+
+      <ul style="font-size:14px; color:#444; padding-left:20px;">
+        <li>This pricing calculator applies exclusively to the Pre-Commissioning phase.</li>
+
+        <li>
+          A minimum of four (4) sensors is deployed per project, regardless of pipeline length
+          or subscription duration, to ensure baseline system functionality, data correlation accuracy,
+          and operational reliability.
+        </li>
+
+        <li>
+          Sensor quantities are optimized based on the execution cycle and subscription duration,
+          allowing the same sensor set to be reused sequentially across pipeline segments.
+        </li>
+
+        <li>
+          As the subscription duration increases, fewer sensors may be required to cover longer
+          pipeline lengths within the agreed execution plan.
+        </li>
+
+        <li>
+          The system is designed to support sensor reusability across multiple pipeline segments
+          as part of the overall execution strategy.
+        </li>
+
+        <li>
+          For a fixed pipeline length, extending the subscription duration enables the reuse
+          of the same sensor set over a longer timeframe, potentially reducing the total number
+          of sensors required.
+        </li>
+
+        <li>
+          As a result, longer subscription periods may lead to a lower overall cost while
+          maintaining full coverage and reliable monitoring within the agreed execution cycle.
+        </li>
+
+        <li>
+          Final system sizing is optimized to balance coverage, execution efficiency,
+          and cost-effectiveness without compromising performance or reliability.
+        </li>
+      </ul>
+    </section>
+  </div>
+ 
   <script>
     function calculate() {
       const pipeline = Number(document.getElementById('pipeline').value);
@@ -169,11 +235,11 @@
     document.querySelectorAll('input, select').forEach(el => el.addEventListener('input', calculate));
     calculate();
   </script>
+
+
   <footer>
     ©️2025 AILH | All Rights Reserved
   </footer>
-  </body>
+</body>
 
 </html>
-
-
